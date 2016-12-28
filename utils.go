@@ -121,18 +121,21 @@ func (ds *Dataset) parseLine(line []string) error {
 	if err = setUint(&ds.Referenced, line[9]); err != nil {
 		return err
 	}
+	if err = setUint(&ds.Reservation, line[10]); err != nil {
+		return err
+	}
 
 	if runtime.GOOS == "solaris" {
 		return nil
 	}
 
-	if err = setUint(&ds.Written, line[10]); err != nil {
+	if err = setUint(&ds.Written, line[11]); err != nil {
 		return err
 	}
-	if err = setUint(&ds.Logicalused, line[11]); err != nil {
+	if err = setUint(&ds.Logicalused, line[12]); err != nil {
 		return err
 	}
-	if err = setUint(&ds.Usedbydataset, line[12]); err != nil {
+	if err = setUint(&ds.Usedbydataset, line[13]); err != nil {
 		return err
 	}
 
