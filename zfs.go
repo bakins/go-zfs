@@ -36,6 +36,7 @@ type Dataset struct {
 	Usedbydataset uint64
 	Quota         uint64
 	Referenced    uint64
+	Reservation   uint64
 }
 
 // InodeType is the type of inode as reported by Diff
